@@ -1,6 +1,3 @@
-# Bank
-
-
   if (!rek || !nominal) {
     alert("Lengkapi data transfer");
     return;
