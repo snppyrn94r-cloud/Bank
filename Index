@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MyBank Mobile</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login" class="screen active">
+  <h1>🏦 MyBank</h1>
+  <p>Mobile Banking Simulation</p>
+  <input id="usernameInput" placeholder="Nama Pengguna" value="Japit Rohim">
+  <input id="pinInput" type="password" placeholder="PIN (bebas)">
+  <button onclick="login()">Login</button>
+</div>
+
+<!-- HOME -->
+<div id="home" class="screen">
+  <h2 id="username"></h2>
+  <p class="rek">No Rekening: 1234567890</p>
+
+  <div class="card">
+    <span>Saldo</span>
+    <h3 id="saldoText"></h3>
+  </div>
+
+  <div class="menu">
+    <button onclick="showScreen('transfer')">💸 Transfer</button>
+    <button onclick="showScreen('riwayat')">📄 Riwayat</button>
+    <button onclick="logout()">🚪 Logout</button>
+  </div>
+</div>
+
+<!-- TRANSFER -->
+<div id="transfer" class="screen">
+  <h2>Transfer</h2>
+  <input id="rekTujuan" placeholder="Rekening Tujuan">
+  <input id="nominal" type="number" placeholder="Nominal">
+  <button onclick="doTransfer()">Kirim</button>
+  <button class="secondary" onclick="showScreen('home')">Kembali</button>
+</div>
+
+<!-- RIWAYAT -->
+<div id="riwayat" class="screen">
+  <h2>Riwayat Transaksi</h2>
+  <ul id="riwayatList"></ul>
+  <button class="secondary" onclick="showScreen('home')">Kembali</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
